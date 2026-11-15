@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>今週のお題抽選</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f4f4f9;
+    }
+    .container {
+      text-align: center;
+      background: white;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      width: 320px;
+    }
+    button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    #result {
+      margin-top: 24px;
+      font-size: 28px;
+      font-weight: bold;
+      color: #333;
+      min-height: 40px; /* 文字が出る前から高さを確保 */
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>今週のお題抽選</h2>
+    <!-- ボタンを押すと draw() 関数が動く -->
+    <button onclick="draw()">抽選する！</button>
+    <!-- ここに結果が表示される -->
+    <div id="result">？？？</div>
+  </div>
+
+  <script>
+    // 1. 抽選したいリスト（Pythonのリストと同じ感覚で書き換えられます）
+    const items = [
+      "[1]宝石",
+"[2]ロボット",
+"[3]歌手",
+"[4]赤",
+"[5]青",
+"[6]緑",
+"[7]黄",
+"[8]黒",
+"[9]白",
+"[10]空",
+"[11]魔法少女",
+"[12]世界遺産",
+"[13]金属",
+"[14]森の生き物",
+"[15]川・湖の生き物",
+"[16]海の生き物",
+"[17]平原の生き物",
+"[18]砂漠の生き物",
+"[19]サバンナの生き物",
+"[20]北極・南極の生き物",
+"[21]逆光",
+"[22]黄金比",
+"[23]春",
+"[24]夏",
+"[25]双子",
+"[26]シンメトリー",
+"[27]力（ちから）",
+"[28]麺類の食べ物",
+"[29]アジアの食べ物",
+"[30]アメリカの食べ物",
+"[31]ヨーロッパの食べ物",
+"[32]日本の食べ物",
+"[33]ジャンクフード",
+"[34]モンスター",
+"[35]天使",
+"[36]悪魔",
+"[37]ちびキャラ（二頭身以下）",
+"[38]人（全身を描くこと）",
+"[39]白黒（モノクロ）",
+"[40]虹",
+"[41]ミリタリー（陸海空どれでも可）",
+"[42]ことわざ",
+"[43]四字熟語",
+"[44]ダジャレ",
+"[45]自画像（デフォルメ可）",
+"[46]SF",
+"[47]スチームパンク",
+"[48]ダークファンタジー",
+"[49]スーツ",
+"[50]ドレス",
+"[51]寝癖",
+"[52]ラブコメ",
+"[53]洋服",
+"[54]和服",
+"[55]探偵",
+"[56]怪盗",
+"[57]妖怪",
+"[58]家具",
+"[59]家電製品",
+"[60]神様",
+"[61]スポーツ",
+"[62]空想上の生物",
+"[63]静物デッサン",
+"[64]メガネ",
+"[65]グリム童話",
+"[66]日本昔話",
+"[67]神話",
+"[68]江戸",
+"[69]昭和",
+"[70]平成",
+"[71]ディズニー",
+"[72]ジブリ",
+"[73]芸能人",
+"[74]偉人",
+"[75]ゲームキャラ（ソシャゲ可）",
+"[76]ポケモン",
+"[77]任天堂のキャラクター",
+"[78]アメリカ西部劇",
+"[79]麺類の食べ物",
+"[80]寿司",
+"[81]お菓子",
+"[82]今の季節に合っているもの",
+"[83]お化け",
+"[84]何かを擬人化",
+"[85]北海道地方",
+"[86]東北地方",
+"[87]関東地方",
+"[88]近畿地方",
+"[89]四国地方",
+"[90]中国地方",
+"[91]九州地方",
+"[92]関西地方",
+"[93]イギリス",
+"[94]フランス",
+"[95]パリ",
+"[96]イタリア",
+"[97]アメリカ",
+"[98]ロシア",
+"[99]飲み物",
+"[100]お店",
+"[101]靴",
+"[102]カバン",
+"[103]電車",
+    ];
+
+    // 2. ボタンが押されたときの処理
+    function draw() {
+      // リストの長さからランダムな番号（インデックス）を作る
+      const randomIndex = Math.floor(Math.random() * items.length);
+      
+      // 選ばれた文字を取り出す（Pythonの random.choice(items) と同じ）
+      const selectedItem = items[randomIndex];
+      
+      // HTMLの「result」というIDの場所に文字を表示する
+      document.getElementById("result").textContent = selectedItem;
+    }
+  </script>
+
+</body>
+</html>
